@@ -44,11 +44,13 @@ class _ExampleRouteState extends State<ExampleRoute> {
 //                      child: cards[currentCardIndex + 1],
                     ),
                 ],
-                onLeftSwipe: () =>  swipeLeft(),
+                onLeftSwipe: () {
+                    if (currentCardIndex + 1 == cards.length - 1)
+                      cards.add(CardExample(color: Colors.red, text: "new card"));
+                    swipeLeft(),}
                 onRightSwipe: () {
                     if (currentCardIndex != 0)
-                      swipeRight();
-                }
+                      swipeRight();}
               )
             else
               // if the deck is complete, add a button to reset deck
@@ -74,7 +76,6 @@ class _ExampleRouteState extends State<ExampleRoute> {
 
     // NOTE: it is your job to change the card
     setState(() {
-      cards.add(CardExample(color: Colors.red, text: "new card"));
       currentCardIndex++;
     });
   }
