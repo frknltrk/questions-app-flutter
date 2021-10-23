@@ -47,7 +47,7 @@ class _ExampleRouteState extends State<ExampleRoute> {
                 onLeftSwipe: () {
                     if (currentCardIndex + 1 == cards.length - 1)
                       cards.add(CardExample(color: Colors.red, text: "new card"));
-                    swipeLeft(),}
+                    swipeLeft();}
                 onRightSwipe: () {
                     if (currentCardIndex != 0)
                       swipeRight();}
