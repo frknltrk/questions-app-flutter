@@ -44,8 +44,8 @@ class _ExampleRouteState extends State<ExampleRoute> {
 //                      child: cards[currentCardIndex + 1],
                     ),
                 ],
-                onLeftSwipe: () => swipeLeft(),
-                onRightSwipe: () => swipeRight(),
+                onLeftSwipe: () =>  swipeLeft(),
+                onRightSwipe: () => (currentCardIndex != 0) ? swipeRight(),
               )
             else
               // if the deck is complete, add a button to reset deck
