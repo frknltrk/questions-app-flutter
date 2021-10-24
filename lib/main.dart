@@ -8,7 +8,15 @@ import 'example_route.dart';
 import 'categories.dart';
 // import 'example_slide_route.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  runApp(MaterialApp(
+    initialRoute: '/',
+    routes: {
+      '/': (context) => FirstScreen(),
+      '/game': (context) => ExampleRoute(),
+    },
+  ));
+}
 
 class MyApp extends StatelessWidget {
   @override

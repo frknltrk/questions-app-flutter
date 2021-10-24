@@ -5,7 +5,7 @@ class FirstScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Click Me Page"),
+        title: Text("Sorsana"),
         backgroundColor: Colors.green,
       ),
       body: GridView.count(
@@ -27,7 +27,9 @@ class FirstScreen extends StatelessWidget {
           style: TextButton.styleFrom(
             textStyle: const TextStyle(fontSize: 20),
           ),
-          onPressed: () {},
+          onPressed: () {
+              Navigator.pushNamed(context, '/game');
+          },
           child: const Text('Çocuk'),
         ),
   ],
