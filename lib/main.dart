@@ -26,11 +26,10 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark().copyWith(
-        // make the background color darker to put the cards in focus!
-        scaffoldBackgroundColor: Color(0xFF111111),
-      ),
+      theme: ThemeData(scaffoldBackgroundColor: const Color(0xFF111111)),
       home: FirstScreen(),
     );
   }
 }
+
+// 0xFF111111

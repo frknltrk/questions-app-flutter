@@ -9,12 +9,12 @@ class FirstScreen extends StatelessWidget {
 //        backgroundColor: Colors.green,
       ),
       body: GridView.count(
-  primary: false,
-  padding: const EdgeInsets.all(20),
-  crossAxisSpacing: 10,
-  mainAxisSpacing: 10,
-  crossAxisCount: 2,
-  children: <Widget>[
+        primary: false,
+        padding: const EdgeInsets.all(20),
+        crossAxisSpacing: 10,
+        mainAxisSpacing: 10,
+        crossAxisCount: 2,
+        children: <Widget>[
     TextButton(
            style: TextButton.styleFrom(
              textStyle: const TextStyle(fontSize: 20),
