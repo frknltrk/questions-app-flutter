@@ -2,14 +2,11 @@ import 'package:flutter/material.dart';
 
 class FirstScreen extends StatelessWidget {
   @override
-  Widget build (BuildContext ctxt) {
-    return new Scaffold(
-      appBar: AppBar(
-        title: Text("Sorsana"),
-      ),
-      body: GridView.count(
-          crossAxisCount: 3,
-          children: <Widget>[
+  Widget build(BuildContext context) {
+  return Center(
+    child: GridView.count(
+      crossAxisCount: 3,
+      children: <Widget>[
         TextButton(
            style: TextButton.styleFrom(
              textStyle: const TextStyle(fontSize: 20),
@@ -54,6 +51,9 @@ class FirstScreen extends StatelessWidget {
               ),
             ],
           ),
-    );
-  }
+        ),
+      ],
+    ),
+  );
+}
 }
