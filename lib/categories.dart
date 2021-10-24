@@ -6,7 +6,7 @@ class FirstScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Sorsana"),
-        backgroundColor: Colors.green,
+//        backgroundColor: Colors.green,
       ),
       body: GridView.count(
   primary: false,
