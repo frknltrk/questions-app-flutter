@@ -10,38 +10,50 @@ class FirstScreen extends StatelessWidget {
       body: GridView.count(
           crossAxisCount: 3,
           children: <Widget>[
-            Container(
-              padding: const EdgeInsets.all(8),
-              child: const Text("He'd have you all unravel at the"),
-              color: Colors.teal[100],
+        TextButton(
+           style: TextButton.styleFrom(
+             textStyle: const TextStyle(fontSize: 20),
+           ),
+           onPressed: null,
+           child: const Text('Disabled'),
+        ),
+        const SizedBox(height: 30),
+        TextButton(
+          style: TextButton.styleFrom(
+            textStyle: const TextStyle(fontSize: 20),
+          ),
+          onPressed: () {},
+          child: const Text('Enabled'),
+        ),
+        const SizedBox(height: 30),
+        ClipRRect(
+          borderRadius: BorderRadius.circular(4),
+          child: Stack(
+            children: <Widget>[
+              Positioned.fill(
+                child: Container(
+                  decoration: const BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: <Color>[
+                        Color(0xFF0D47A1),
+                        Color(0xFF1976D2),
+                        Color(0xFF42A5F5),
+                      ],
+                    ),
+                  ),
+                ),
               ),
-            Container(
-              padding: const EdgeInsets.all(8),
-              child: const Text('Heed not the rabble'),
-              color: Colors.teal[200],
+              TextButton(
+                style: TextButton.styleFrom(
+                  padding: const EdgeInsets.all(16.0),
+                  primary: Colors.white,
+                  textStyle: const TextStyle(fontSize: 20),
+                ),
+                onPressed: () {},
+                 child: const Text('Gradient'),
               ),
-            Container(
-              padding: const EdgeInsets.all(8),
-              child: const Text('Sound of screams but the'),
-              color: Colors.teal[300],
-              ),
-            Container(
-              padding: const EdgeInsets.all(8),
-              child: const Text('Who scream'),
-              color: Colors.teal[400],
-              ),
-            Container(
-              padding: const EdgeInsets.all(8),
-              child: const Text('Revolution is coming...'),
-              color: Colors.teal[500],
-              ),
-            Container(
-              padding: const EdgeInsets.all(8),
-              child: const Text('Revolution, they...'),
-              color: Colors.teal[600],
-              ),
-        ],
-      ),
+            ],
+          ),
     );
   }
 }
