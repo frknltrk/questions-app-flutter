@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'example_route.dart';
-import 'categories.dart'
+import 'categories.dart';
 // import 'example_slide_route.dart';
 
 void main() => runApp(MyApp());
