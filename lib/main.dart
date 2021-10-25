@@ -10,7 +10,7 @@ import 'categories.dart';
 
 void main() {
   runApp(MaterialApp(
-    initialRoute: '/game',
+//    initialRoute: '/game',
     routes: {
       '/': (context) => FirstScreen(),
       '/game': (context) => ExampleRoute(),
