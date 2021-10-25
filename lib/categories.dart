@@ -4,7 +4,6 @@ class FirstScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF111111),
       appBar: AppBar(
         title: const Center( child: Text("Sorsana"),),
 //        backgroundColor: Colors.green,
