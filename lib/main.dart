@@ -8,15 +8,7 @@ import 'example_route.dart';
 import 'categories.dart';
 // import 'example_slide_route.dart';
 
-void main() {
-  runApp(MyApp(
-    initialRoute: '/',
-    routes: {
-      '/': (context) => FirstScreen(),
-      '/game': (context) => ExampleRoute(),
-    },
-  ));
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
@@ -25,6 +17,11 @@ class MyApp extends StatelessWidget {
 //    SystemChrome.setEnabledSystemUIOverlays([]);
 
     return MaterialApp(
+      initialRoute: '/',
+      routes: {
+        '/': (context) => FirstScreen(),
+        '/game': (context) => ExampleRoute(),
+      },
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         // make the background color darker to put the cards in focus!
