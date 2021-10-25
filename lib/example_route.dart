@@ -93,11 +93,11 @@ class _ExampleRouteState extends State<ExampleRoute> {
       children: <Widget>[
         TextButton(
           child: Text("Önceki"),
-          onPressed: () => cardController.triggerSwipeLeft(),
+          onPressed: () => cardController.triggerSwipeRight(),
         ),
         TextButton(
           child: Text("Rastgele"),
-          onPressed: () => cardController.triggerSwipeRight(),
+          onPressed: () => cardController.triggerSwipeLeft(),
         ),
       ],
     );
