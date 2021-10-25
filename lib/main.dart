@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
         // make the background color darker to put the cards in focus!
         scaffoldBackgroundColor: const Color(0xFF111111),
       ),
-      home: FirstScreen(),
+//REDUNDANT      home: FirstScreen(),
     );
   }
 }
