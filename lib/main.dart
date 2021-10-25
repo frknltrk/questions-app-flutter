@@ -13,6 +13,7 @@ void main() {
     initialRoute: '/',
     routes: {
       '/': (context) => MyApp(),
+      '/categories': (context) => FirstScreen(),
       '/game': (context) => ExampleRoute(),
     },
   ));
