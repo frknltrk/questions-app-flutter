@@ -14,7 +14,7 @@ class _ExampleRouteState extends State<ExampleRoute> {
   final List<CardExample> cards = [
     CardExample(color: Colors.red, text: "First question"),
     CardExample(color: Colors.blue, text: "Second question"),
-//    CardExample(color: Colors.orange, text: "Third question"),
+    CardExample(color: Colors.orange, text: "Third question"),
 //    CardExample(color: Colors.indigo),
 //    CardExample(color: Colors.green, text: "The next card is the last"),
 //    CardExample(color: Colors.purple, text: "This is the last card"),
@@ -47,7 +47,7 @@ class _ExampleRouteState extends State<ExampleRoute> {
                 ],
                 onLeftSwipe: () {
                     if (currentCardIndex + 1 == cards.length - 1)
-                      cards.add(CardExample(color: Colors.red, text: "${currentCardIndex+2}th question"));
+                      cards.add(CardExample(color: Colors.red, text: "${currentCardIndex+3}th question"));
                     swipeLeft();},
                 onRightSwipe: () {
                     if (currentCardIndex != 0)
