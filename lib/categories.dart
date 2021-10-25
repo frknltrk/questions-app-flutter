@@ -5,7 +5,7 @@ class FirstScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Sorsana"),
+        title: Center( child: Text("Sorsana"),),
 //        backgroundColor: Colors.green,
       ),
       body: GridView.count(
