@@ -10,7 +10,7 @@ import 'categories.dart';
 
 void main() {
   runApp(MaterialApp(
-//    initialRoute: '/game',
+    initialRoute: '/',
     routes: {
       '/': (context) => FirstScreen(),
       '/game': (context) => ExampleRoute(),
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // make it a full screen app
-    SystemChrome.setEnabledSystemUIOverlays([]);
+//    SystemChrome.setEnabledSystemUIOverlays([]);
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
         // make the background color darker to put the cards in focus!
         scaffoldBackgroundColor: Color(0xFF111111),
       ),
-      home: ExampleRoute(),
+      home: FirstScreen(),
     );
   }
 }
