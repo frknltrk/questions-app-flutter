@@ -91,11 +91,11 @@ class _ExampleRouteState extends State<ExampleRoute> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: <Widget>[
-        FlatButton(
+        TextButton(
           child: Text("Önceki"),
           onPressed: () => cardController.triggerSwipeLeft(),
         ),
-        FlatButton(
+        TextButton(
           child: Text("Rastgele"),
           onPressed: () => cardController.triggerSwipeRight(),
         ),
