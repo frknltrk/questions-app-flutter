@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
         // make the background color darker to put the cards in focus!
-        scaffoldBackgroundColor: const Color(0xFF111111),
+        scaffoldBackgroundColor: Color(0xFF111111),
       ),
       home: FirstScreen(),
     );
