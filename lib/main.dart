@@ -12,7 +12,7 @@ void main() {
   runApp(MaterialApp(
     initialRoute: '/',
     routes: {
-      '/': (context) => FirstScreen(),
+      '/': (context) => MyApp(),
       '/game': (context) => ExampleRoute(),
     },
   ));
