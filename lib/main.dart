@@ -26,9 +26,9 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: final ThemeData.dark().copyWith(
+      theme: ThemeData.dark().copyWith(
         // make the background color darker to put the cards in focus!
-        scaffoldBackgroundColor: Color(0xFF111111),
+        scaffoldBackgroundColor: const Color(0xFF111111),
       ),
       home: FirstScreen(),
     );
