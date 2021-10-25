@@ -9,11 +9,10 @@ import 'categories.dart';
 // import 'example_slide_route.dart';
 
 void main() {
-  runApp(MaterialApp(
+  runApp(MyApp(
     initialRoute: '/',
     routes: {
-      '/': (context) => MyApp(),
-      '/categories': (context) => FirstScreen(),
+      '/': (context) => FirstScreen(),
       '/game': (context) => ExampleRoute(),
     },
   ));

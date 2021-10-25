@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'example_route.dart';
-
 class FirstScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
