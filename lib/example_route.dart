@@ -12,17 +12,18 @@ class ExampleRoute extends StatefulWidget {
 
 class _ExampleRouteState extends State<ExampleRoute> {
   final List<CardExample> cards = [
-    CardExample(color: Colors.red, text: "First card"),
-    CardExample(color: Colors.blue, text: "Second card"),
-    CardExample(color: Colors.orange),
-    CardExample(color: Colors.indigo),
-    CardExample(color: Colors.green, text: "The next card is the last"),
-    CardExample(color: Colors.purple, text: "This is the last card"),
+    CardExample(color: Colors.red, text: "First question"),
+    CardExample(color: Colors.blue, text: "Second question"),
+    CardExample(color: Colors.orange, text: "Third question"),
+//    CardExample(color: Colors.indigo),
+//    CardExample(color: Colors.green, text: "The next card is the last"),
+//    CardExample(color: Colors.purple, text: "This is the last card"),
   ];
   int currentCardIndex = 0;
 
   @override
   Widget build(BuildContext context) {
+//  _cardController is an identifier.
     SwipeableWidgetController _cardController = SwipeableWidgetController();
     return Scaffold(
       body: SafeArea(
@@ -44,13 +45,18 @@ class _ExampleRouteState extends State<ExampleRoute> {
 //                      child: cards[currentCardIndex + 1],
                     ),
                 ],
-                onLeftSwipe: () => swipeLeft(),
-                onRightSwipe: () => swipeRight(),
+                onLeftSwipe: () {
+                    if (currentCardIndex + 1 == cards.length - 1)
+                      cards.add(CardExample(color: Colors.red, text: "${currentCardIndex+3}th question"));
+                    swipeLeft();},
+                onRightSwipe: () {
+                    if (currentCardIndex != 0)
+                      swipeRight();},
               )
             else
               // if the deck is complete, add a button to reset deck
               Center(
-                child: FlatButton(
+                child: TextButton(
                   child: Text("Reset deck"),
                   onPressed: () => setState(() => currentCardIndex = 0),
                 ),
@@ -78,7 +84,7 @@ class _ExampleRouteState extends State<ExampleRoute> {
   void swipeRight() {
     print("right");
     setState(() {
-      currentCardIndex++;
+      currentCardIndex--;
     });
   }
 
@@ -86,13 +92,13 @@ class _ExampleRouteState extends State<ExampleRoute> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: <Widget>[
-        FlatButton(
+        TextButton(
           child: Text("Önceki"),
-          onPressed: () => cardController.triggerSwipeLeft(),
-        ),
-        FlatButton(
-          child: Text("Rastgele"),
           onPressed: () => cardController.triggerSwipeRight(),
+        ),
+        TextButton(
+          child: Text("Rastgele"),
+          onPressed: () => cardController.triggerSwipeLeft(),
         ),
       ],
     );
