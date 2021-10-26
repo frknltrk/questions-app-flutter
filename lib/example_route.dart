@@ -56,7 +56,7 @@ class _ExampleRouteState extends State<ExampleRoute> {
             else
               // if the deck is complete, add a button to reset deck
               Center(
-                child: FlatButton(
+                child: TextButton(
                   child: Text("Reset deck"),
                   onPressed: () => setState(() => currentCardIndex = 0),
                 ),
