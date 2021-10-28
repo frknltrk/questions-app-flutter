@@ -9,6 +9,7 @@ import 'categories.dart';
 // import 'example_slide_route.dart';
 
 Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(MyApp());
 }
 
