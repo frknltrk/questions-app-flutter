@@ -3,21 +3,25 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 import 'example_route.dart';
 import 'categories.dart';
 // import 'example_slide_route.dart';
 
-void main() => runApp(MyApp());
+Future<void> main() async {
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // make it a full screen app
+    final Future<FirebaseApp> _fbApp = Firebase.initializeApp();
+//    make it a full screen app
 //    SystemChrome.setEnabledSystemUIOverlays([]);
 
     return MaterialApp(
-      initialRoute: '/',
+//    initialRoute: '/',
       routes: {
         '/': (context) => FirstScreen(),
         '/game': (context) => ExampleRoute(),
@@ -27,7 +31,20 @@ class MyApp extends StatelessWidget {
         // make the background color darker to put the cards in focus!
         scaffoldBackgroundColor: const Color(0xFF111111),
       ),
-//REDUNDANT      home: FirstScreen(),
+      home: FutureBuilder(
+          future: _fbApp,
+          builder: (context, snapshot) {
+            if (snapshot.hasError) {
+              print("You have an error! ${snapshot.error.toString()}");
+              return Text("Something went wrong.");
+            } else if (snapshot.hasData) {
+              return FirstScreen();
+            } else {
+              return Center(
+                child: CircularProgressIndicator(),
+              );
+            }
+          }),
     );
   }
 }

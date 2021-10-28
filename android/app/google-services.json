@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "730239180075",
+    "project_id": "sorsana-c18f9",
+    "storage_bucket": "sorsana-c18f9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:730239180075:android:650294e419a834c795f96e",
+        "android_client_info": {
+          "package_name": "com.ttsoftware.sorsana"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "730239180075-nbefl64dcnvlq8rvvqssr08oh9sactd9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfPc_QxR_O5RadxzaW7zileUYpbV21tN4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "730239180075-nbefl64dcnvlq8rvvqssr08oh9sactd9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
