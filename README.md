@@ -28,3 +28,5 @@ https://swipeable-card.vercel.app/examples/basic/
 https://github.com/ninest/swipeable_card
 https://flutter.dev/docs/get-started/codelab
 https://dart.dev/guides/language/language-tour
+https://youtube.com/watch?v=EXp0gq9kGxI
+https://mdrobnych.medium.com/how-to-use-firebase-android-app-in-flutlab-235cd330ce79
