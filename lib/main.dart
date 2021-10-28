@@ -17,12 +17,11 @@ Future<void> main() async {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final Future<FirebaseApp> _fbApp = Firebase.initializeApp();
 //    make it a full screen app
 //    SystemChrome.setEnabledSystemUIOverlays([]);
 
     return MaterialApp(
-		initialRoute: '/',
+      initialRoute: '/',
       routes: {
         '/': (context) => FirstScreen(),
         '/game': (context) => ExampleRoute(),
