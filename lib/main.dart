@@ -8,6 +8,7 @@ import 'example_route.dart';
 import 'categories.dart';
 // import 'example_slide_route.dart';
 
+// implement: https://youtube.com/watch?v=EXp0gq9kGxI#t=14m25s
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -17,9 +18,6 @@ Future<void> main() async {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-//    make it a full screen app
-//    SystemChrome.setEnabledSystemUIOverlays([]);
-
     return MaterialApp(
       initialRoute: '/',
       routes: {

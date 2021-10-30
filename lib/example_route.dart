@@ -11,10 +11,10 @@ class ExampleRoute extends StatefulWidget {
 }
 
 class _ExampleRouteState extends State<ExampleRoute> {
-  final List<CardExample> cards = [
-    CardExample(color: Colors.red, text: "First question"),
-    CardExample(color: Colors.blue, text: "Second question"),
-    CardExample(color: Colors.orange, text: "Third question"),
+  List<CardExample> cards = [
+    CardExample(),
+    CardExample(),
+    CardExample(),
 //    CardExample(color: Colors.indigo),
 //    CardExample(color: Colors.green, text: "The next card is the last"),
 //    CardExample(color: Colors.purple, text: "This is the last card"),
@@ -36,7 +36,7 @@ class _ExampleRouteState extends State<ExampleRoute> {
                 animationDuration: 500,
                 horizontalThreshold: 0.85,
                 child: cards[currentCardIndex],
-                  nextCards: <Widget>[
+                nextCards: <Widget>[
                   // show next card
                   // if there are no next cards, show nothing
                   if (!(currentCardIndex + 1 >= cards.length))
@@ -46,12 +46,12 @@ class _ExampleRouteState extends State<ExampleRoute> {
                     ),
                 ],
                 onLeftSwipe: () {
-                    if (currentCardIndex + 1 == cards.length - 1)
-                      cards.add(CardExample(color: Colors.red, text: "${currentCardIndex+3}th question"));
-                    swipeLeft();},
+                  if (currentCardIndex + 1 == cards.length - 1) cards.add(CardExample());
+                  swipeLeft();
+                },
                 onRightSwipe: () {
-                    if (currentCardIndex != 0)
-                      swipeRight();},
+                  if (currentCardIndex != 0) swipeRight();
+                },
               )
             else
               // if the deck is complete, add a button to reset deck
@@ -64,8 +64,7 @@ class _ExampleRouteState extends State<ExampleRoute> {
 
             // only show the card controlling buttons when there are cards
             // otherwise, just hide it
-            if (currentCardIndex < cards.length)
-              cardControllerRow(_cardController),
+            if (currentCardIndex < cards.length) cardControllerRow(_cardController),
           ],
         ),
       ),

@@ -30,3 +30,5 @@ https://flutter.dev/docs/get-started/codelab
 https://dart.dev/guides/language/language-tour
 https://youtube.com/watch?v=EXp0gq9kGxI
 https://mdrobnych.medium.com/how-to-use-firebase-android-app-in-flutlab-235cd330ce79
+https://stackoverflow.com/questions/66966147/flutter-firestore-retrieve-random-firestore-document
+https://firebase.flutter.dev/docs/firestore/usage/#one-time-read
