@@ -34,37 +34,31 @@ class CardExample extends StatelessWidget {
   Widget build(BuildContext context) {
     return FutureBuilder<DocumentSnapshot>(
       future: getRandomQuestion(),
-      builder: (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
-        if (snapshot.hasError) {
-          return Text(
-            snapshot.error.toString(),
-            style: TextStyle(
-              fontSize: 36.0,
-              color: Colors.white.withOpacity(0.8),
-              fontWeight: FontWeight.w900,
-            ),
-          );
+      builder: (context, snap) {
+        if (snap.connectionState != ConnectionState.done) {
+          //print('project snapshot data is: ${snap.data}');
+          return Text("loading");
+        } else {
+          if (snap.hasError) {
+            return Text(snap.error.toString());
+          } else {
+            if (snap.hasData) {
+              return Text(
+                snap.data['text'].toString(),
+                style: TextStyle(
+                  fontSize: 36.0,
+                  color: Colors.white.withOpacity(0.8),
+                  fontWeight: FontWeight.w900,
+                ),
+              );
+            } else {
+              return Text("No DAta");
+            }
+          }
         }
-
-        if (snapshot.hasData && !snapshot.data.exists) {
-          return Text("Document does not exist");
-        }
-
-        if (snapshot.connectionState == ConnectionState.done) {
-          Map<String, dynamic> data = snapshot.data.data() as Map<String, dynamic>;
-          return Text(
-            data['text'],
-            style: TextStyle(
-              fontSize: 36.0,
-              color: Colors.white.withOpacity(0.8),
-              fontWeight: FontWeight.w900,
-            ),
-          );
-        }
-
-        return Text("loading");
       },
     );
+
 /*    return Container(
       height: 450,
       width: 320,
