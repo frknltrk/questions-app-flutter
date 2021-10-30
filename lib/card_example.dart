@@ -41,6 +41,7 @@ class CardExample extends StatelessWidget {
       builder: (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
         if (snapshot.hasError) {
           return Text("Something went wrong");
+          print(snapshot.error);
         }
 
         if (snapshot.hasData && !snapshot.data.exists) {
