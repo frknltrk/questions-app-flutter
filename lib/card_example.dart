@@ -28,11 +28,7 @@ class CardExample extends StatelessWidget {
 
   const CardExample({
     Key key,
-    this.color = Colors.indigo,
-    this.text = "Card Example",
   }) : super(key: key);
-  final Color color;
-  final String text;
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +36,14 @@ class CardExample extends StatelessWidget {
       future: getRandomQuestion(),
       builder: (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
         if (snapshot.hasError) {
-          return Text(snapshot.error.toString());
+          return Text(
+            snapshot.error.toString(),
+            style: TextStyle(
+              fontSize: 36.0,
+              color: Colors.white.withOpacity(0.8),
+              fontWeight: FontWeight.w900,
+            ),
+          );
         }
 
         if (snapshot.hasData && !snapshot.data.exists) {
