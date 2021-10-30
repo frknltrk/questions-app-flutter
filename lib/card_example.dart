@@ -40,8 +40,7 @@ class CardExample extends StatelessWidget {
       future: getRandomQuestion(),
       builder: (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
         if (snapshot.hasError) {
-          return Text("Something went wrong");
-          print(snapshot.error);
+          return Text(snapshot.error.toString());
         }
 
         if (snapshot.hasData && !snapshot.data.exists) {
