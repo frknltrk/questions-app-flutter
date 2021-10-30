@@ -33,7 +33,7 @@
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
-  <script type="module">
+  <script>
   // Your web app's Firebase configuration
   const firebaseConfig = {
     apiKey: "AIzaSyDT6Wy56mwtqzERrkmN2rGQyqEO7K_5gIA",
@@ -45,7 +45,7 @@
   };
 
   // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
+  firebase.initializeApp(firebaseConfig);
 </script>
 </body>
 </html>
