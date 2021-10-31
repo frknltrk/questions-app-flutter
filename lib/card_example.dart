@@ -28,7 +28,7 @@ class CardExample extends StatelessWidget {
     });
     // generate a random index based on the list length and use it to retrieve the element
     String _randomIndex = getRandomGeneratedId();
-    QuerySnapshot querySnapshot = await myRef.where('id', isGreaterThanOrEqualTo: _randomIndex).orderBy('id', descending: true).limit(1).get();
+    QuerySnapshot querySnapshot = await myRef.where('id', isGreaterThanOrEqualTo: _randomIndex).orderBy('id', descending: false).limit(1).get();
     debugPrint(_randomIndex);
     debugPrint(querySnapshot.docs[0].toString());
     return querySnapshot.docs[0]; // returns a DocumentSnapshot of the (random) question

@@ -72,7 +72,7 @@ class _ExampleRouteState extends State<ExampleRoute> {
   }
 
   void swipeLeft() {
-    print("left");
+    print("Yeni Soru");
 
     // NOTE: it is your job to change the card
     setState(() {
@@ -81,7 +81,7 @@ class _ExampleRouteState extends State<ExampleRoute> {
   }
 
   void swipeRight() {
-    print("right");
+    print("Önceki Soru");
     setState(() {
       currentCardIndex--;
     });
