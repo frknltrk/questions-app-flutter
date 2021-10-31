@@ -19,7 +19,13 @@ class CardExample extends StatelessWidget {
 
   Future<DocumentSnapshot> getRandomQuestion() async {
     CollectionReference myRef = FirebaseFirestore.instance.collection('questions');
-    myRef.doc('AQbq33GJ9GE09OaChOPq').get().then((value) => debugPrint('Question: ${value.data()['text']}'));
+    myRef.doc('CUTB8ZUTRB5SDX9MX6yH').get().then((DocumentSnapshot documentSnapshot) {
+      if (documentSnapshot.exists) {
+        debugPrint('Document data: ${documentSnapshot.data()}');
+      } else {
+        debugPrint('Document does not exist on the database');
+      }
+    });
     // generate a random index based on the list length and use it to retrieve the element
     String _randomIndex = getRandomGeneratedId();
     QuerySnapshot querySnapshot = await myRef.where('id', isGreaterThanOrEqualTo: _randomIndex).orderBy('id', descending: false).limit(1).get();
