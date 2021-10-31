@@ -11,7 +11,7 @@ class ExampleRoute extends StatefulWidget {
 }
 
 class _ExampleRouteState extends State<ExampleRoute> {
-  List<CardExample> cards = [
+  final List<CardExample> cards = [
     CardExample(),
     CardExample(),
     CardExample(),
