@@ -27,6 +27,7 @@ class CardExample extends StatelessWidget {
       if (querySnapshot.docs.isNotEmpty) {
         DocumentSnapshot question = querySnapshot.docs[0]; // returns a DocumentSnapshot of the (random) question
         debugPrint(question.data().toString());
+        return question;
       }
     }
   }
