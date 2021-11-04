@@ -45,7 +45,7 @@ class CardExample extends StatelessWidget {
           return Text(
             snapshot.error.toString(),
             style: TextStyle(
-              fontSize: 36.0,
+              fontSize: 24.0,
               color: Colors.white.withOpacity(0.8),
               fontWeight: FontWeight.w900,
             ),
@@ -61,7 +61,7 @@ class CardExample extends StatelessWidget {
           return Text(
             data['text'],
             style: TextStyle(
-              fontSize: 36.0,
+              fontSize: 24.0,
               color: Colors.white.withOpacity(0.8),
               fontWeight: FontWeight.w900,
             ),
