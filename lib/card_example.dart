@@ -27,13 +27,15 @@ class CardExample extends StatelessWidget {
       }
     });
     // generate a random index based on the list length and use it to retrieve the element
-    String _randomIndex = getRandomGeneratedId();
-    QuerySnapshot querySnapshot = await myRef.where('id', isGreaterThanOrEqualTo: _randomIndex).orderBy('id', descending: false).limit(1).get();
-    debugPrint(_randomIndex);
-    if (querySnapshot.docs.isEmpty) {
-      debugPrint("List is empty.");
+    while (true) {
+      String _randomIndex = getRandomGeneratedId();
+      QuerySnapshot querySnapshot = await myRef.where('id', isGreaterThanOrEqualTo: _randomIndex).orderBy('id', descending: false).limit(1).get();
+      debugPrint(_randomIndex);
+      if (querySnapshot.docs.isNotEmpty) {
+        debugPrint("Found it.");
+        return querySnapshot.docs[0]; // returns a DocumentSnapshot of the (random) question
+      }
     }
-    return querySnapshot.docs[0]; // returns a DocumentSnapshot of the (random) question
   }
 
   const CardExample({
