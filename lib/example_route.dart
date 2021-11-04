@@ -15,14 +15,12 @@ class _ExampleRouteState extends State<ExampleRoute> {
     CardExample(),
     CardExample(),
     CardExample(),
-//    CardExample(color: Colors.indigo),
-//    CardExample(color: Colors.green, text: "The next card is the last"),
-//    CardExample(color: Colors.purple, text: "This is the last card"),
   ];
   int currentCardIndex = 0;
 
   @override
   Widget build(BuildContext context) {
+    debugPrint(cards.length);
 //  _cardController is an identifier.
     SwipeableWidgetController _cardController = SwipeableWidgetController();
     return Scaffold(
