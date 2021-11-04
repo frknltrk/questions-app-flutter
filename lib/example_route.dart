@@ -30,41 +30,29 @@ class _ExampleRouteState extends State<ExampleRoute> {
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: <Widget>[
-            if (currentCardIndex < cards.length)
-              SwipeableWidget(
-                cardController: _cardController,
-                animationDuration: 500,
-                horizontalThreshold: 0.85,
-                child: cards[currentCardIndex],
-                nextCards: <Widget>[
-                  // show next card
-                  // if there are no next cards, show nothing
-                  if (currentCardIndex + 1 < cards.length)
-                    Align(
-                      alignment: Alignment.center,
+            cardControllerRow(_cardController),
+            SwipeableWidget(
+              cardController: _cardController,
+              animationDuration: 500,
+              horizontalThreshold: 0.85,
+              child: cards[currentCardIndex],
+              nextCards: <Widget>[
+                // show next card
+                // if there are no next cards, show nothing
+                if (currentCardIndex + 1 < cards.length)
+                  Align(
+                    alignment: Alignment.center,
 //                    child: cards[currentCardIndex + 1],
-                    ),
-                ],
-                onLeftSwipe: () {
-                  if (currentCardIndex + 1 == cards.length - 1) cards.add(CardExample());
-                  swipeLeft();
-                },
-                onRightSwipe: () {
-                  if (currentCardIndex != 0) swipeRight();
-                },
-              )
-            else
-              // if the deck is complete, add a button to reset deck
-              Center(
-                child: TextButton(
-                  child: Text("Reset deck"),
-                  onPressed: () => setState(() => currentCardIndex = 0),
-                ),
-              ),
-
-            // only show the card controlling buttons when there are cards
-            // otherwise, just hide it
-            if (currentCardIndex < cards.length) cardControllerRow(_cardController),
+                  ),
+              ],
+              onLeftSwipe: () {
+                if (currentCardIndex + 1 == cards.length - 1) cards.add(CardExample());
+                swipeLeft();
+              },
+              onRightSwipe: () {
+                if (currentCardIndex != 0) swipeRight();
+              },
+            ),
           ],
         ),
       ),
