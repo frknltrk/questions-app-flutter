@@ -63,6 +63,7 @@ class _ExampleRouteState extends State<ExampleRoute> {
     // NOTE: it is your job to change the card
     setState(() {
       currentCardIndex++;
+      debugPrint(currentCardIndex.toString());
     });
   }
 
@@ -70,6 +71,7 @@ class _ExampleRouteState extends State<ExampleRoute> {
     print("Önceki Soru");
     setState(() {
       currentCardIndex--;
+      debugPrint(currentCardIndex.toString());
     });
   }
 
