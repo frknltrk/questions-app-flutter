@@ -19,7 +19,7 @@ class _ExampleRouteState extends State<ExampleRoute> {
 //    CardExample(color: Colors.green, text: "The next card is the last"),
 //    CardExample(color: Colors.purple, text: "This is the last card"),
   ];
-  int currentCardIndex = 0;
+  final int currentCardIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -35,16 +35,6 @@ class _ExampleRouteState extends State<ExampleRoute> {
                 cardController: _cardController,
                 animationDuration: 500,
                 horizontalThreshold: 0.85,
-                child: cards[currentCardIndex],
-                nextCards: <Widget>[
-                  // show next card
-                  // if there are no next cards, show nothing
-                  if (!(currentCardIndex + 1 >= cards.length))
-                    Align(
-                      alignment: Alignment.center,
-//                      child: cards[currentCardIndex + 1],
-                    ),
-                ],
                 onLeftSwipe: () {
                   if (currentCardIndex + 1 == cards.length - 1) cards.add(CardExample());
                   swipeLeft();
