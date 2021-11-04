@@ -36,6 +36,15 @@ class _ExampleRouteState extends State<ExampleRoute> {
                 animationDuration: 500,
                 horizontalThreshold: 0.85,
                 child: cards[currentCardIndex],
+                nextCards: <Widget>[
+                  // show next card
+                  // if there are no next cards, show nothing
+                  if (currentCardIndex + 1 < cards.length)
+                    Align(
+                      alignment: Alignment.center,
+//                    child: cards[currentCardIndex + 1],
+                    ),
+                ],
                 onLeftSwipe: () {
                   if (currentCardIndex + 1 == cards.length - 1) cards.add(CardExample());
                   swipeLeft();
