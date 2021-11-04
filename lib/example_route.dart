@@ -12,9 +12,9 @@ class ExampleRoute extends StatefulWidget {
 
 class _ExampleRouteState extends State<ExampleRoute> {
   static final List<CardExample> cards = [
-    CardExample(),
-    CardExample(),
-    CardExample(),
+    CardExample(key: UniqueKey()),
+    CardExample(key: UniqueKey()),
+    CardExample(key: UniqueKey()),
   ];
   int currentCardIndex = 0;
 
