@@ -30,7 +30,6 @@ class _ExampleRouteState extends State<ExampleRoute> {
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: <Widget>[
-            cardControllerRow(_cardController),
             SwipeableWidget(
               cardController: _cardController,
               animationDuration: 500,
@@ -53,6 +52,7 @@ class _ExampleRouteState extends State<ExampleRoute> {
                 if (currentCardIndex != 0) swipeRight();
               },
             ),
+            cardControllerRow(_cardController),
           ],
         ),
       ),
