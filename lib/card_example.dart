@@ -30,7 +30,9 @@ class CardExample extends StatelessWidget {
     String _randomIndex = getRandomGeneratedId();
     QuerySnapshot querySnapshot = await myRef.where('id', isGreaterThanOrEqualTo: _randomIndex).orderBy('id', descending: false).limit(1).get();
     debugPrint(_randomIndex);
-    debugPrint(querySnapshot.docs[0].toString());
+    if (querySnapshot.docs.isEmpty) {
+      debugPrint("List is empty.");
+    }
     return querySnapshot.docs[0]; // returns a DocumentSnapshot of the (random) question
   }
 
