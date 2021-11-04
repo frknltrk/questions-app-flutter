@@ -20,7 +20,8 @@ class _ExampleRouteState extends State<ExampleRoute> {
 
   @override
   Widget build(BuildContext context) {
-    debugPrint(cards.length.toString());
+    debugPrint("Card Length: ${cards.length.toString()}");
+    debugPrint("Current Index: $currentCardIndex");
 //  _cardController is an identifier.
     SwipeableWidgetController _cardController = SwipeableWidgetController();
     return Scaffold(
