@@ -35,6 +35,7 @@ class _ExampleRouteState extends State<ExampleRoute> {
                 cardController: _cardController,
                 animationDuration: 500,
                 horizontalThreshold: 0.85,
+                child: cards[currentCardIndex + 1],
                 onLeftSwipe: () {
                   if (currentCardIndex + 1 == cards.length - 1) cards.add(CardExample());
                   swipeLeft();
