@@ -12,9 +12,9 @@ class ExampleRoute extends StatefulWidget {
 
 class _ExampleRouteState extends State<ExampleRoute> {
   static final List<CardExample> cards = [
-    CardExample(key: UniqueKey()),
-    CardExample(key: UniqueKey()),
-    CardExample(key: UniqueKey()),
+    CardExample(key: ValueKey(0)),
+    CardExample(key: ValueKey(1)),
+    CardExample(key: ValueKey(2)),
   ];
   int currentCardIndex = 0;
 
@@ -44,7 +44,7 @@ class _ExampleRouteState extends State<ExampleRoute> {
                   ),
               ],
               onLeftSwipe: () {
-                if (currentCardIndex + 1 == cards.length - 1) cards.add(CardExample());
+                if (currentCardIndex + 1 == cards.length - 1) cards.add(CardExample(key: ValueKey(currentCardIndex + 2)));
                 swipeLeft();
               },
               onRightSwipe: () {
