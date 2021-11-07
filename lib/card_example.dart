@@ -32,9 +32,7 @@ class CardExample extends StatelessWidget {
     }
   }
 
-  const CardExample({
-    Key key,
-  }) : super(key: key);
+  const CardExample({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

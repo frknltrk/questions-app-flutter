@@ -11,12 +11,19 @@ class ExampleRoute extends StatefulWidget {
 }
 
 class _ExampleRouteState extends State<ExampleRoute> {
-  static final List<CardExample> cards = [
-    CardExample(key: ValueKey(0)),
-    CardExample(key: ValueKey(1)),
-    CardExample(key: ValueKey(2)),
-  ];
-  int currentCardIndex = 0;
+  List<CardExample> cards;
+  int currentCardIndex;
+
+  @override
+  void initState() {
+    super.initState();
+    cards = [
+      CardExample(),
+      CardExample(),
+      CardExample(),
+    ];
+    currentCardIndex = 0;
+  }
 
   @override
   Widget build(BuildContext context) {
