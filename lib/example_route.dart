@@ -18,9 +18,9 @@ class _ExampleRouteState extends State<ExampleRoute> {
   void initState() {
     super.initState();
     cards = [
-      CardExample(ValueKey(0)),
-      CardExample(ValueKey(1)),
-      CardExample(ValueKey(2)),
+      CardExample(key: ValueKey(0)),
+      CardExample(key: ValueKey(1)),
+      CardExample(key: ValueKey(2)),
     ];
     currentCardIndex = 0;
   }
