@@ -33,3 +33,6 @@ https://mdrobnych.medium.com/how-to-use-firebase-android-app-in-flutlab-235cd330
 https://stackoverflow.com/questions/66966147/flutter-firestore-retrieve-random-firestore-document
 https://firebase.flutter.dev/docs/firestore/usage/#one-time-read
 https://stackoverflow.com/a/69543992
+
+### Next To Do
+- (?) convert CardExample from stateLESS to stateFUL to make us of *key*s
