@@ -18,13 +18,13 @@ class _ExampleRouteState extends State<ExampleRoute> {
   @override
   void initState() {
     super.initState();
+    _cardController = SwipeableWidgetController();
     cards = [
       CardExample(key: ValueKey(0)),
       CardExample(key: ValueKey(1)),
       CardExample(key: ValueKey(2)),
     ];
     currentCardIndex = 0;
-    _cardController = SwipeableWidgetController();
   }
 
   @override
