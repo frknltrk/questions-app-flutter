@@ -23,6 +23,7 @@ class _ExampleRouteState extends State<ExampleRoute> {
       CardExample(key: ValueKey(2)),
     ];
     currentCardIndex = 0;
+    SwipeableWidgetController _cardController = SwipeableWidgetController();
   }
 
   @override
@@ -30,7 +31,6 @@ class _ExampleRouteState extends State<ExampleRoute> {
     debugPrint("Card Length: ${cards.length.toString()}");
     debugPrint("Current Index: $currentCardIndex");
 //  _cardController is an identifier.
-    SwipeableWidgetController _cardController = SwipeableWidgetController();
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -66,7 +66,7 @@ class _ExampleRouteState extends State<ExampleRoute> {
   }
 
   void swipeLeft() {
-    print("Yeni Soru");
+    debugPrint("Yeni Soru");
 
     // NOTE: it is your job to change the card
     setState(() {
@@ -75,7 +75,7 @@ class _ExampleRouteState extends State<ExampleRoute> {
   }
 
   void swipeRight() {
-    print("Önceki Soru");
+    debugPrint("Önceki Soru");
     setState(() {
       currentCardIndex--;
     });
