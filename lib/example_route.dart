@@ -43,7 +43,7 @@ class _ExampleRouteState extends State<ExampleRoute> {
               cardController: _cardController,
               animationDuration: 500,
               horizontalThreshold: 0.85,
-              child: cards[-1],
+              child: cards.last,
               nextCards: <Widget>[
                 // show next card
                 // if there are no next cards, show nothing
