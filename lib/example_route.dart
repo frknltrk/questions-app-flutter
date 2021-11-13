@@ -25,7 +25,7 @@ class _ExampleRouteState extends State<ExampleRoute> {
       CardExample(key: ValueKey(2)),
     ];
     currentCardIndex = 0;
-    debugPrint("initState() has run.")
+    debugPrint("initState() has run.");
   }
 
   @override
