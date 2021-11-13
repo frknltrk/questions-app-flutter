@@ -11,6 +11,7 @@ class ExampleRoute extends StatefulWidget {
 }
 
 class _ExampleRouteState extends State<ExampleRoute> {
+  SwipeableWidgetController _cardController;
   List<CardExample> cards;
   int currentCardIndex;
 
@@ -23,7 +24,7 @@ class _ExampleRouteState extends State<ExampleRoute> {
       CardExample(key: ValueKey(2)),
     ];
     currentCardIndex = 0;
-    SwipeableWidgetController _cardController = SwipeableWidgetController();
+    _cardController = SwipeableWidgetController();
   }
 
   @override
