@@ -71,7 +71,10 @@ class _ExampleRouteState extends State<ExampleRoute> {
 
     // NOTE: it is your job to change the card
     setState(() {
-      if (previousCards.isNotEmpty) cards.add(previousCards.removeLast());
+      if (previousCards.isNotEmpty)
+        cards.add(previousCards.removeLast());
+      else
+        cards.add(CardExample());
     });
   }
 
