@@ -12,7 +12,6 @@ class ExampleRoute extends StatefulWidget {
 
 class _ExampleRouteState extends State<ExampleRoute> {
   SwipeableWidgetController _cardController;
-  CardExample question;
   List<CardExample> cards;
   List<CardExample> previousCards;
   int currentCardIndex;
@@ -22,7 +21,7 @@ class _ExampleRouteState extends State<ExampleRoute> {
     super.initState();
     _cardController = SwipeableWidgetController();
     cards = [
-      CardExample()
+      CardExample(key: ValueKey(0))
     ];
     previousCards = [];
     currentCardIndex = 0;
