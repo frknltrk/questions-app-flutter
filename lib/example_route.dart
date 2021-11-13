@@ -12,7 +12,9 @@ class ExampleRoute extends StatefulWidget {
 
 class _ExampleRouteState extends State<ExampleRoute> {
   SwipeableWidgetController _cardController;
+  CardExample question;
   List<CardExample> cards;
+  List<CardExample> previousCards;
   int currentCardIndex;
 
   @override
@@ -20,10 +22,9 @@ class _ExampleRouteState extends State<ExampleRoute> {
     super.initState();
     _cardController = SwipeableWidgetController();
     cards = [
-      CardExample(key: ValueKey(0)),
-      CardExample(key: ValueKey(1)),
-      CardExample(key: ValueKey(2)),
+      CardExample()
     ];
+    previousCards = [];
     currentCardIndex = 0;
     debugPrint("initState() has run.");
   }
@@ -42,7 +43,7 @@ class _ExampleRouteState extends State<ExampleRoute> {
               cardController: _cardController,
               animationDuration: 500,
               horizontalThreshold: 0.85,
-              child: cards[currentCardIndex],
+              child: cards[-1],
               nextCards: <Widget>[
                 // show next card
                 // if there are no next cards, show nothing
@@ -53,11 +54,10 @@ class _ExampleRouteState extends State<ExampleRoute> {
                   ),
               ],
               onLeftSwipe: () {
-                if (currentCardIndex + 1 == cards.length - 1) cards.add(CardExample(key: ValueKey(currentCardIndex + 2)));
                 swipeLeft();
               },
               onRightSwipe: () {
-                if (currentCardIndex != 0) swipeRight();
+                swipeRight();
               },
             ),
             cardControllerRow(_cardController),
@@ -72,14 +72,14 @@ class _ExampleRouteState extends State<ExampleRoute> {
 
     // NOTE: it is your job to change the card
     setState(() {
-      currentCardIndex++;
+      cards.add(previousCards.removeLast());
     });
   }
 
   void swipeRight() {
     debugPrint("Önceki Soru");
     setState(() {
-      currentCardIndex--;
+      previousCards.add(cards.removeLast());
     });
   }
 
