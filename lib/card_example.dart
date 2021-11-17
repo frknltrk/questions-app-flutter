@@ -2,14 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'dart:math';
 
-class CardExample extends StatefulWidget {
-  const CardExample({Key key}) : super(key: key);
-
-  @override
-  _CardExampleState createState() => _CardExampleState();
-}
-
-class _CardExampleState extends State<CardExample> {
+class CardExample extends StatelessWidget {
   String getRandomGeneratedId() {
     const int AUTO_ID_LENGTH = 20;
     const String AUTO_ID_ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -38,6 +31,8 @@ class _CardExampleState extends State<CardExample> {
       }
     }
   }
+
+  const CardExample({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

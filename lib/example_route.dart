@@ -13,7 +13,6 @@ class ExampleRoute extends StatefulWidget {
 class _ExampleRouteState extends State<ExampleRoute> {
   SwipeableWidgetController _cardController;
   List<CardExample> cards;
-  List<CardExample> previousCards;
   int currentCardIndex;
 
   @override
@@ -21,11 +20,11 @@ class _ExampleRouteState extends State<ExampleRoute> {
     super.initState();
     _cardController = SwipeableWidgetController();
     cards = [
-      CardExample(key: ValueKey(0))
+      CardExample(key: ValueKey(0)),
+      CardExample(key: ValueKey(1)),
+      CardExample(key: ValueKey(2)),
     ];
-    previousCards = [];
     currentCardIndex = 0;
-    debugPrint("initState() has run.");
   }
 
   @override
@@ -42,20 +41,22 @@ class _ExampleRouteState extends State<ExampleRoute> {
               cardController: _cardController,
               animationDuration: 500,
               horizontalThreshold: 0.85,
-              child: cards.last,
+              child: cards[currentCardIndex],
               nextCards: <Widget>[
                 // show next card
                 // if there are no next cards, show nothing
-                Align(
-                  alignment: Alignment.center,
-//                   child: cards[currentCardIndex + 1],
-                ),
+                if (currentCardIndex + 1 < cards.length)
+                  Align(
+                    alignment: Alignment.center,
+//                    child: cards[currentCardIndex + 1],
+                  ),
               ],
               onLeftSwipe: () {
+                if (currentCardIndex + 1 == cards.length - 1) cards.add(CardExample(key: ValueKey(currentCardIndex + 2)));
                 swipeLeft();
               },
               onRightSwipe: () {
-                swipeRight();
+                if (currentCardIndex != 0) swipeRight();
               },
             ),
             cardControllerRow(_cardController),
@@ -66,21 +67,18 @@ class _ExampleRouteState extends State<ExampleRoute> {
   }
 
   void swipeLeft() {
-    debugPrint("Yeni Soru");
+    print("Yeni Soru");
 
     // NOTE: it is your job to change the card
     setState(() {
-      if (previousCards.isNotEmpty)
-        cards.add(previousCards.removeLast());
-      else
-        cards.add(CardExample());
+      currentCardIndex++;
     });
   }
 
   void swipeRight() {
-    debugPrint("Önceki Soru");
+    print("Önceki Soru");
     setState(() {
-      previousCards.add(cards.removeLast());
+      currentCardIndex--;
     });
   }
 
